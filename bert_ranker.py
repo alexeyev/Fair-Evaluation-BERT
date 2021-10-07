@@ -8,7 +8,7 @@ import numpy as np
 class BERTRanker:
 
     def __init__(self, model_dir: str, vocab: Optional[pd.DataFrame] = None) -> None:
-        word_embedding_model = models.BERT(model_dir)
+        word_embedding_model = models.Transformer(model_dir)
         pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension(),
                                        pooling_mode_mean_tokens=False,
                                        pooling_mode_cls_token=True,
